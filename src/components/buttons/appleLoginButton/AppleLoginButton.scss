@@ -1,0 +1,13 @@
+.AppleLoginBtn {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+        filter: brightness(75%);
+    }
+}

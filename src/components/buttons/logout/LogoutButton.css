@@ -1,0 +1,54 @@
+.logoutButton {
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+  border-radius: 10px;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  animation-name: ButtonFadeIn;
+  animation-duration: 1s;
+}
+.logoutButton .logoutContent {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-family: arial;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 46px;
+  width: 46px !important;
+  padding: 10px;
+  cursor: pointer;
+}
+.logoutButton .logoutContent .icon {
+  min-width: 29px;
+  margin-right: 10px;
+}
+.logoutButton .logoutContent .text {
+  font-weight: bold;
+  font-size: 15px;
+}
+.logoutButton .logoutContent:hover {
+  width: 110px !important;
+}
+
+@keyframes ButtonFadeIn {
+  0% {
+    bottom: -160px;
+  }
+  50% {
+    bottom: 80px;
+  }
+  100% {
+    bottom: 50px;
+  }
+}/*# sourceMappingURL=LogoutButton.css.map */

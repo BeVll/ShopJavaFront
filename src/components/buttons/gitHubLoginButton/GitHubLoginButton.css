@@ -1,0 +1,11 @@
+.GitHubloginBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.GitHubloginBtn:hover {
+  filter: brightness(75%);
+}/*# sourceMappingURL=GitHubLoginButton.css.map */

@@ -1,0 +1,140 @@
+.headerBlock {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    z-index: 5;
+
+    .halfCircle {
+        position: absolute;
+        right: -30px;
+        cursor: pointer;
+   
+
+        &:hover {
+            +.arrowLeft {
+                filter: brightness(85%);
+            }
+
+        }
+    }
+
+    .arrowLeft {
+        position: absolute;
+        right: -20px;
+        transition: 0.2s;
+        cursor: pointer;
+        transition: transform 1s;
+        
+
+        &:hover {
+            filter: brightness(85%);
+        }
+    }
+
+    .header {
+
+        width: fit-content;
+        padding: 0;
+        border-radius: 10px;
+        flex: 200px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        z-index: 5;
+
+        .headerItem {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            padding: 12px 15px;
+            cursor: pointer;
+            transition: 0.2s;
+
+
+            &:hover {
+                filter: brightness(85%);
+            }
+
+
+
+            .bi-plus-circle {
+                fill: url(#MyGradient);
+            }
+
+            .createPostItem {
+                background: linear-gradient(to top, #8360c3, #2ebf91);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+
+            }
+
+            .itemName {
+                display: block;
+                font-size: 16px;
+                font-weight: bold;
+                margin-left: 10px;
+            }
+
+            .themeToogleIcon {
+                margin-right: 10px;
+            }
+        }
+    }
+
+}
+
+.opened {
+    margin-left: 50px;
+    animation-name: headerFadeIn;
+    animation-duration: 1s;
+}
+
+.closed {
+    margin-left: -160px;
+    animation-name: headerFadeOut;
+    animation-duration: 1s;
+}
+
+.lang {
+    background-color: transparent;
+    padding: 0;
+    padding-bottom: 4px;
+    transition: 0.2s;
+    font-size: 16px;
+    
+    &:hover {
+        filter: brightness(150%);
+    }
+}
+
+.betweenLang {
+    width: 1px;
+    height: 16px;
+    margin: 0 5px;
+}
+
+
+@keyframes headerFadeIn {
+    0% {
+        margin-left: -160px;
+    }
+
+    50% {
+        margin-left: 80px;
+    }
+
+    100% {
+        margin-left: 50px;
+    }
+}
+
+@keyframes headerFadeOut {
+    0% {
+        margin-left: 50px;
+    }
+
+    100% {
+        margin-left: -160px;
+    }
+}

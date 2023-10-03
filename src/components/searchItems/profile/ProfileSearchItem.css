@@ -1,0 +1,49 @@
+.profileBlock {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.profileBlock:hover {
+  filter: brightness(85%);
+}
+.profileBlock .dataAndAvatar {
+  display: flex;
+  flex-direction: column;
+}
+.profileBlock .dataAndAvatar .avaAndNicks {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.profileBlock .dataAndAvatar .avaAndNicks .ava {
+  height: 46px;
+  width: 46px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: contain;
+}
+.profileBlock .dataAndAvatar .avaAndNicks .nicks {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: start;
+  margin-left: 10px;
+}
+.profileBlock .dataAndAvatar .avaAndNicks .nicks .name {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 25px;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+.profileBlock .dataAndAvatar .avaAndNicks .nicks .userName {
+  font-size: 14px;
+  line-height: 19px;
+}
+.profileBlock .dataAndAvatar .description {
+  margin-top: 15px;
+}/*# sourceMappingURL=ProfileSearchItem.css.map */

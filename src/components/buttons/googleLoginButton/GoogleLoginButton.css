@@ -1,0 +1,21 @@
+.GoogleLoginBtn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  overflow: hidden;
+  align-items: center;
+}
+.GoogleLoginBtn div {
+  position: absolute;
+  opacity: 1%;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  scale: 120%;
+}
+.GoogleLoginBtn:hover {
+  filter: brightness(75%);
+}/*# sourceMappingURL=GoogleLoginButton.css.map */

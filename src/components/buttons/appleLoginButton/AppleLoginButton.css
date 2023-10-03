@@ -1,0 +1,11 @@
+.AppleLoginBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.AppleLoginBtn:hover {
+  filter: brightness(75%);
+}/*# sourceMappingURL=AppleLoginButton.css.map */

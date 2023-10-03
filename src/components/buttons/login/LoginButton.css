@@ -1,0 +1,55 @@
+.loginButton {
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  animation-name: ButtonFadeIn;
+  animation-duration: 1s;
+  border: 1px solid;
+  transition: 0.2s;
+}
+.loginButton:hover {
+  filter: brightness(75%);
+}
+.loginButton .loginContent {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-family: arial;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  border-radius: 10px;
+  overflow: hidden;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.loginButton .loginContent .icon {
+  min-width: 29px;
+  margin-right: 10px;
+}
+.loginButton .loginContent .text {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+@keyframes ButtonFadeIn {
+  0% {
+    bottom: -160px;
+  }
+  50% {
+    bottom: 80px;
+  }
+  100% {
+    bottom: 50px;
+  }
+}/*# sourceMappingURL=LoginButton.css.map */

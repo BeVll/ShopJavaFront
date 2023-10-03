@@ -1,0 +1,28 @@
+.typeSearchButton {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  transition: 0.2s;
+  cursor: pointer;
+  padding-top: 5px;
+  border-radius: 10px;
+}
+.typeSearchButton:first-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.typeSearchButton:last-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.typeSearchButton:hover {
+  filter: brightness(85%);
+}
+.typeSearchButton .typeSearchItem {
+  width: 90px;
+  padding: 10px 0;
+  border-bottom: 2px solid;
+  text-align: center;
+  transition: 0.2s;
+  font-weight: 500;
+}/*# sourceMappingURL=TypeSearchButton.css.map */
