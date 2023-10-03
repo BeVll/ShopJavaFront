@@ -87,9 +87,9 @@ export default function CategoriesListPage() {
                                         <td>
                                             <input type='checkbox' style={{ backgroundColor: themeColors.backgroundHover, borderColor: themeColors.primary }} />
                                         </td>
-                                        <td>{category.id}</td>
-                                        <td><img src={import.meta.env.VITE_STORAGE_URL + category.image} height={40} width={40} /></td>
-                                        <td>{category.name}</td>
+                                        <td style={{ color: themeColors.mainText }}>{category.id}</td>
+                                        <td style={{ color: themeColors.mainText }}><img src={import.meta.env.VITE_STORAGE_URL + "300_" +category.image} height={40} width={40} /></td>
+                                        <td style={{ color: themeColors.mainText }}>{category.name}</td>
                                         <td style={{ color: themeColors.descriptionText }}>{category.description}</td>
                                     </tr>
                                 ))
