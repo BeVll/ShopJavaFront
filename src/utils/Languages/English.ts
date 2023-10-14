@@ -8,11 +8,11 @@ const English: ILanguage = {
         logoutBtn: "Logout",
         signUpBtn: "Sign Up",
         continueWith: "Continue with",
-        name: "Name",
+        firstname: "Firstname",
+        lastname: "Lastname",
         confirmPassword: "Confirm password",
-        userName: "Username",
+        phone: "Phone",
         dateOfBirth: "Date of birth",
-        country: "Country",
 
     },
     profile: {

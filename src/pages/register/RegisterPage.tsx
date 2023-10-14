@@ -21,7 +21,7 @@ export default function RegisterPage() {
     const [errorMessage, setErrorMessage] = useState("");
     const [google, setGoogle] = useState(false);
     const { languageItem } = useLanguage();
-    
+
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -53,51 +53,44 @@ export default function RegisterPage() {
         email: "",
         password: "",
         passwordConfirm: "",
-        name: "",
-        userName: "",
-        country: countries.at(0)?.name ? countries[0].name : "Afghanistan",
-        countryCode: countries.at(0)?.code ? countries[0].code : "af",
+        firstname: "",
+        lastname: "",
+        phone: "",
         dateOfBirth: new Date(Date.now()).getDate().toString()
     };
 
     const createSchema = yup.object({
         email: yup.string().email("Wrong email type").required("Email is required"),
-        name: yup.string().min(2, "Too short").max(50, "Too long").required("Name is required"),
-        userName: yup.string().min(2, "Too short").max(30, "Too long").required("Username is required"),
+        firstname: yup.string().min(2, "Too short").max(50, "Too long").required("Firstname is required"),
+        lasttname: yup.string().min(2, "Too short").max(50, "Too long").required("Firstname is required"),
+        phone: yup.string().min(2, "Too short").max(30, "Too long").required("Phone is required"),
         password: yup.string().min(6, "Too short").max(100, "Too long").required("Password is required"),
         passwordConfirm: yup.string().min(6, "Too short").max(100, "Too long").oneOf([yup.ref('password'), ""], 'Passwords must match').required("Confirm password is required field"),
-        dateOfBirth: yup.date().min(new Date(1900, 1, 1)).required(),
-        countryCode: yup.string().min(2).max(2).required()
+        dateOfBirth: yup.date().min(new Date(1900, 1, 1)).required()
     });
 
     const onSubmitFormikData = async (values: IRegisterUser) => {
-
-        const country = await countries.find(c => c.code.toLocaleLowerCase() == values.countryCode)?.name;
-
-        console.log("country" + country);
-        if (country) {
-            let userReg: IRegisterUser = {
-                email: values.email,
-                password: values.password,
-                passwordConfirm: values.passwordConfirm,
-                name: values.name,
-                userName: values.userName,
-                country: country,
-                countryCode: values.countryCode,
-                dateOfBirth: values.dateOfBirth
-            }
-
-            UserService.registerUser(userReg)
-                .then((res2) => {
-                    navigate("/login");
-                })
-                .catch((error) => {
-                    console.log(error);
-                    setErrorMessage(error.response.data);
-                });
-
-            console.log("valid");
+        let userReg: IRegisterUser = {
+            email: values.email,
+            password: values.password,
+            passwordConfirm: values.passwordConfirm,
+            firstname: values.firstname,
+            lastname: values.lastname,
+            phone: values.phone,
+            dateOfBirth: values.dateOfBirth
         }
+        console.log("valid");
+        UserService.registerUser(userReg)
+            .then((res2) => {
+                
+            })
+            .catch((error) => {
+                console.log(error);
+                setErrorMessage(error.response.data);
+            });
+
+        console.log("valid");
+
 
 
 
@@ -119,8 +112,13 @@ export default function RegisterPage() {
             <form className="inputs" onSubmit={handleSubmit}>
 
                 <div className="inputBlock">
-                    <input type="text" name='name' className='input' value={values.name} onChange={handleChange} style={{ backgroundColor: themeColors.backgroundHover, borderColor: themeColors.descriptionText, outlineColor: themeColors.primary, color: themeColors.mainText }} placeholder={languageItem.login.name} />
-                    <span className='error' style={{ color: themeColors.error }}>{errors.name}</span>
+                    <input type="text" name='firstname' className='input' value={values.firstname} onChange={handleChange} style={{ backgroundColor: themeColors.backgroundHover, borderColor: themeColors.descriptionText, outlineColor: themeColors.primary, color: themeColors.mainText }} placeholder={languageItem.login.firstname} />
+                    <span className='error' style={{ color: themeColors.error }}>{errors.firstname}</span>
+                </div>
+
+                <div className="inputBlock">
+                    <input type="text" name='lastname' className='input' value={values.lastname} onChange={handleChange} style={{ backgroundColor: themeColors.backgroundHover, borderColor: themeColors.descriptionText, outlineColor: themeColors.primary, color: themeColors.mainText }} placeholder={languageItem.login.lastname} />
+                    <span className='error' style={{ color: themeColors.error }}>{errors.lastname}</span>
                 </div>
 
                 <div className="inputBlock">
@@ -136,22 +134,15 @@ export default function RegisterPage() {
                     <span className='error' style={{ color: themeColors.error }}>{errors.passwordConfirm}</span>
                 </div>
                 <div className="inputBlock">
-                    <input type="text" name='userName' className='input' value={values.userName} onChange={handleChange} style={{ backgroundColor: themeColors.backgroundHover, borderColor: themeColors.descriptionText, outlineColor: themeColors.primary, color: themeColors.mainText }} placeholder={languageItem.login.userName} />
-                    <span className='error' style={{ color: themeColors.error }}>{errors.userName}</span>
+                    <input type="phone" name='phone' className='input' value={values.phone} onChange={handleChange} style={{ backgroundColor: themeColors.backgroundHover, borderColor: themeColors.descriptionText, outlineColor: themeColors.primary, color: themeColors.mainText }} placeholder={languageItem.login.phone} />
+                    <span className='error' style={{ color: themeColors.error }}>{errors.phone}</span>
                 </div>
                 <div className="inputBlock">
                     <input type="date" name='dateOfBirth' className='input' value={values.dateOfBirth} onChange={handleChange} style={{ backgroundColor: themeColors.backgroundHover, borderColor: themeColors.descriptionText, outlineColor: themeColors.primary, color: themeColors.mainText }} placeholder={languageItem.login.dateOfBirth} />
                     <span className='error' style={{ color: themeColors.error }}>{errors.dateOfBirth}</span>
                 </div>
-                <div className="inputBlock">
-                    <select className='input select' name='countryCode' value={values.countryCode} onChange={handleChange} style={{ backgroundColor: themeColors.backgroundHover, borderColor: themeColors.descriptionText, outlineColor: themeColors.primary, color: themeColors.mainText }} placeholder={languageItem.login.country} >
-                        {countries.map(country =>
-                            <option value={country.code.toLowerCase()} style={{ borderColor: themeColors.primary }}>{country.name}</option>
-                        )}
-                    </select>
-                </div>
                 <div className="inputBlock signButtons">
-                    <button type='submit' data-toggle="modal" data-target="#exampleModal" className='registerBtn' style={{ borderColor: themeColors.primary, backgroundColor: themeColors.primary, color: themeColors.mainText }}>{languageItem.login.signUpBtn}</button>
+                    <button type='submit' className='registerBtn' style={{ borderColor: themeColors.primary, backgroundColor: themeColors.primary, color: themeColors.mainText }}>{languageItem.login.signUpBtn}</button>
                     <Link className="otherSignPage" style={{ color: themeColors.primary }} to="/login">{languageItem.login.loginBtn}</Link>
                 </div>
 

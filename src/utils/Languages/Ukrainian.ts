@@ -8,11 +8,11 @@ const Ukrainian: ILanguage = {
         logoutBtn: "Вийти",
         signUpBtn: "Зареєструватись",
         continueWith: "Продовжити з",
-        name: "Ім'я",
+        firstname: "Ім'я",
+        lastname: "Прізвище",
         confirmPassword: "Підтвердіть пароль",
-        userName: "Нік",
+        phone: "Номер телефону",
         dateOfBirth: "Дата народження",
-        country: "Країна"
     },
     profile: {
         followers: "Підписників",

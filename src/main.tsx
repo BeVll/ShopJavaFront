@@ -18,11 +18,10 @@ if (localStorage.token && localStorage.getItem("user")) {
   store.dispatch({
     type: AuthUserActionType.LOGIN_USER, payload: {
       id: user.id,
-      name: user.name,
-      userName: user.userName,
-      image: user.image,
-      bg: user.bg,
-      roles: user.roles
+      firstname: user.firstname,
+      lastname: user.lastname,
+      phone: user.phone,
+      email: user.email
     } as IUser
   });
  

@@ -21,12 +21,10 @@ export interface IUserProfile{
 
 export interface IUser {
     id: string,
-    name: string,
-    userName:string,
-    image: string,
-    email: string,
-    bg: string,
-    roles: string
+    firstname: string,
+    lastname: string,
+    phone:string,
+    email: string
 }
 
 export interface IChangeImageRequest {

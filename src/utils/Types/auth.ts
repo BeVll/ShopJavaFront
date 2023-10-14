@@ -22,10 +22,9 @@ export interface IRegisterUser{
     email: string,
     password: string,
     passwordConfirm: string,
-    name: string,
-    userName: string,
-    country: string,
-    countryCode: string,
+    firstname: string,
+    lastname: string,
+    phone: string,
     dateOfBirth: string
 }
 

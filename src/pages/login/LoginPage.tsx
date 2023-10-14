@@ -78,11 +78,9 @@ export default function LoginPage() {
                 dispatch({
                     type: AuthUserActionType.LOGIN_USER, payload: {
                         id: user2.id,
-                        name: user2.name,
-                        userName: user.userName,
-                        image: user2.image,
-                        bg: user2.bg,
-                        roles: user2.roles
+                        firstname: user2.firstname,
+                        lastname: user2.lastname,
+                        phone: user2.phone
                     } as IUser
                 });
 

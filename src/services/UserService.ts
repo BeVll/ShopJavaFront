@@ -34,7 +34,7 @@ const UserService = {
   },
   registerUser: async function (userData: IRegisterUser) {
     try {
-      const response = await formHttp.post("/Auth/signup", userData);
+      const response = await formHttp.post("/account/register", userData);
       return response;
     } catch (error) {
       throw error;
