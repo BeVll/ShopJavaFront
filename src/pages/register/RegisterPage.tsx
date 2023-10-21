@@ -60,13 +60,13 @@ export default function RegisterPage() {
     };
 
     const createSchema = yup.object({
-        email: yup.string().email("Wrong email type").required("Email is required"),
-        firstname: yup.string().min(2, "Too short").max(50, "Too long").required("Firstname is required"),
-        lasttname: yup.string().min(2, "Too short").max(50, "Too long").required("Firstname is required"),
-        phone: yup.string().min(2, "Too short").max(30, "Too long").required("Phone is required"),
-        password: yup.string().min(6, "Too short").max(100, "Too long").required("Password is required"),
-        passwordConfirm: yup.string().min(6, "Too short").max(100, "Too long").oneOf([yup.ref('password'), ""], 'Passwords must match').required("Confirm password is required field"),
-        dateOfBirth: yup.date().min(new Date(1900, 1, 1)).required()
+        // email: yup.string().email("Wrong email type").required("Email is required"),
+        // firstname: yup.string().min(2, "Too short").max(50, "Too long").required("Firstname is required"),
+        // lasttname: yup.string().min(2, "Too short").max(50, "Too long").required("Firstname is required"),
+        // phone: yup.string().min(2, "Too short").max(30, "Too long").required("Phone is required"),
+        // password: yup.string().min(6, "Too short").max(100, "Too long").required("Password is required"),
+        // passwordConfirm: yup.string().min(6, "Too short").max(100, "Too long").oneOf([yup.ref('password'), ""], 'Passwords must match').required("Confirm password is required field"),
+        // dateOfBirth: yup.date().min(new Date(1900, 1, 1)).required()
     });
 
     const onSubmitFormikData = async (values: IRegisterUser) => {
@@ -86,7 +86,7 @@ export default function RegisterPage() {
             })
             .catch((error) => {
                 console.log(error);
-                setErrorMessage(error.response.data);
+                setErrorMessage(error.response);
             });
 
         console.log("valid");

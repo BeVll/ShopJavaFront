@@ -8,31 +8,12 @@
 
     
     
-    .storiesBlock{
-        border-radius: 10px;
+    .productsBlock{
         width: 100%;
-        flex-direction: column;
-        align-items: start;
-        justify-content: center;
-        animation-name: storiesIn;
-        animation-duration: 1s;
-        overflow-y: auto;
-        
-        .nameBlock{
-            font-size: 16px;
-        }
-
-        .storiesList{
-            display: flex;
-            justify-content: start;
-            align-items: center;
-            padding: 15px;
-            width: fit-content;
-            .allStories{
-                display: flex;
-                gap: 15px;
-            }
-        }
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 15px;
+       
     }
     .postsBlock{
        display: flex;
